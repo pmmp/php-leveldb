@@ -465,10 +465,9 @@ static inline leveldb_options_t* php_leveldb_get_open_options(zval *options_zv, 
 		{
 		case leveldb_no_compression:
 		case leveldb_snappy_compression:
-#ifdef MOJANG_LEVELDB
 		case leveldb_zlib_compression:
+		case leveldb_zstd_compression:
 		case leveldb_zlib_raw_compression:
-#endif
 			leveldb_options_set_compression(options, Z_LVAL_P(value));
 			break;
 		default:
@@ -1608,11 +1607,9 @@ PHP_MINIT_FUNCTION(leveldb)
 	/* Register constants */
 	REGISTER_LONG_CONSTANT("LEVELDB_NO_COMPRESSION", leveldb_no_compression, CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("LEVELDB_SNAPPY_COMPRESSION", leveldb_snappy_compression, CONST_CS | CONST_PERSISTENT);
-
-#ifdef MOJANG_LEVELDB
 	REGISTER_LONG_CONSTANT("LEVELDB_ZLIB_COMPRESSION", leveldb_zlib_compression, CONST_CS | CONST_PERSISTENT);
+	REGISTER_LONG_CONSTANT("LEVELDB_ZSTD_COMPRESSION", leveldb_zstd_compression, CONST_CS | CONST_PERSISTENT);
 	REGISTER_LONG_CONSTANT("LEVELDB_ZLIB_RAW_COMPRESSION", leveldb_zlib_raw_compression, CONST_CS | CONST_PERSISTENT);
-#endif // MOJANG_LEVELDB
 
 	return SUCCESS;
 }
