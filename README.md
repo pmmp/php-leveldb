@@ -1,6 +1,6 @@
 # PHP-LevelDB: The PHP Binding for LevelDB
 
-Build Status: [![Build Status](https://travis-ci.com/pmmp/php-leveldb.svg?branch=pmmp-mojang-compatible)](https://travis-ci.com/pmmp/php-leveldb)
+Build Status: [![CI](https://github.com/pmmp/php-leveldb/workflows/CI/badge.svg)](https://github.com/pmmp/php-leveldb/actions?query=workflow%3ACI)
 
 LevelDB is a fast key-value storage library written at Google that provides an ordered mapping from string keys to string values.
 
@@ -21,12 +21,8 @@ Or you could get leveldb from: <https://github.com/google/leveldb.git>
 
 	$ git clone https://github.com/google/leveldb.git
 	$ cd leveldb
+	$ cmake .
 	$ make
-
->**NOTE** LevelDB didn't have make install target in Makefile:
-><http://code.google.com/p/leveldb/issues/detail?id=27>，
->If you want to install to a specific dir, you could:
->`make INSTALL_PATH=/Your/Path/`
 
 ## Installation
 
