@@ -2,6 +2,10 @@
 
 Build Status: [![CI](https://github.com/pmmp/php-leveldb/workflows/CI/badge.svg)](https://github.com/pmmp/php-leveldb/actions?query=workflow%3ACI)
 
+## About the fork
+This is a fork of [reeze/leveldb](https://github.com/reeze/php-leveldb) which adds support for [pmmp/leveldb](https://github.com/pmmp/leveldb), a fork of LevelDB which adds support for Zlib and Zstd compression to be compatible with databases produced by Minecraft: Bedrock Edition.
+
+## Original README follows
 LevelDB is a fast key-value storage library written at Google that provides an ordered mapping from string keys to string values.
 
 This extension is a binding for LevelDB
