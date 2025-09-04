@@ -25,7 +25,7 @@ jobs:
           - 8.2.29
           - 8.3.25
           - 8.4.12
-        leveldb: [1.23]
+        leveldb: [c66f4648c262dfe47ad089aa9af8156c58765c72]
         zts: [enable, disable]
 
     env:
@@ -48,7 +48,7 @@ jobs:
         if: steps.leveldb-build-cache.outputs.cache-hit != 'true'
         run: |
           sudo apt update && sudo apt install cmake
-          curl -sSL https://github.com/google/leveldb/archive/${{ matrix.leveldb }}.tar.gz | tar -xz
+          curl -sSL https://github.com/pmmp/leveldb/archive/${{ matrix.leveldb }}.tar.gz | tar -xz
           cd leveldb-${{ matrix.leveldb }}
           cmake \
             -DCMAKE_INSTALL_PREFIX="${{ github.workspace }}/leveldb" \
